@@ -5,21 +5,21 @@
 class Wxcraft < Formula
   desc "METAR and TAF retrieval and decoding"
   homepage "https://github.com/rmitchellscott/WxCraft"
-  version "0.0.1"
+  version "0.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.1/wxcraft_Darwin_x86_64.tar.gz"
-      sha256 "62f6a3a4838f8a82436822b2d30af21ead0e828421a9d3398fcf78e561d07f4b"
+      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.2/wxcraft_Darwin_x86_64.tar.gz"
+      sha256 "e0bfbf414760ccf3c248b9356cbdbee5d3fa743bb9e2a7aba495cfb7072cd881"
 
       def install
         bin.install "wxcraft"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.1/wxcraft_Darwin_arm64.tar.gz"
-      sha256 "f9e4e78590436680c97b585d4385b1614707c1d75a19af13348573d9df6aa2f0"
+      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.2/wxcraft_Darwin_arm64.tar.gz"
+      sha256 "eaeb2894dfc3431315f790bb56efcad1c6276d1ae04cf9affecffd5b0a07faa3"
 
       def install
         bin.install "wxcraft"
@@ -30,8 +30,8 @@ class Wxcraft < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.1/wxcraft_Linux_x86_64.tar.gz"
-        sha256 "a58c877db41ab0642a8322885f51bc1773141927f20f8636813adcae7ac9495d"
+        url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.2/wxcraft_Linux_x86_64.tar.gz"
+        sha256 "f1b5c33c4172d51eb9183c2874d6028d2f854fdac018a0135e196103b97cc139"
 
         def install
           bin.install "wxcraft"
@@ -40,8 +40,8 @@ class Wxcraft < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.1/wxcraft_Linux_arm64.tar.gz"
-        sha256 "c28367dc403cb9264e6c37ce015410a20ac9eb1313efe3ce4aeb0cef74d17000"
+        url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.2/wxcraft_Linux_arm64.tar.gz"
+        sha256 "8d387f77c274f01b9a34b71329b6cf18e213eeb8d4159f8ef814a0c5beac1c2c"
 
         def install
           bin.install "wxcraft"
