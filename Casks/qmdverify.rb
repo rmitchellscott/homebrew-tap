@@ -3,7 +3,7 @@ cask "qmdverify" do
   name "qmdverify"
   desc "QMD file compatibility checker for reMarkable devices"
   homepage "https://github.com/rmitchellscott/rm-qmd-verify-cli"
-  version "0.1.0"
+  version "0.1.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,28 @@ cask "qmdverify" do
   on_macos do
     on_intel do
       url "https://github.com/rmitchellscott/rm-qmd-verify-cli/releases/download/v#{version}/rm-qmd-verify-cli_#{version}_macOS_x86_64.tar.gz"
-      sha256 "df2adaa3c28748733483bb3b9444ae5a3714dea8a318e1fd94ce3553ae8423f5"
+      sha256 "a0681bf64709ae9bebb2b6d6f16dfb47863c05a4dcc087f8eee9afc963fb10d9"
     end
     on_arm do
       url "https://github.com/rmitchellscott/rm-qmd-verify-cli/releases/download/v#{version}/rm-qmd-verify-cli_#{version}_macOS_aarch64.tar.gz"
-      sha256 "a55b37028f32af38a914002f00b6112446277809cd973dfc95422e3454d51534"
+      sha256 "84e491581d3054ce2590da2c3afbee7abfa59b2ae540b5c82d4aa54dfbb00147"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/rmitchellscott/rm-qmd-verify-cli/releases/download/v#{version}/rm-qmd-verify-cli_#{version}_linux_x86_64.tar.gz"
-      sha256 "b2d5aa927dafa468c88dd320db65b251d5230dff8967632247c83a0b11097df2"
+      sha256 "fd5617ba42b38cf0a0fb486a81c2e50ca7f195b53b848aae8cd48c78cfdd384f"
     end
     on_arm do
       url "https://github.com/rmitchellscott/rm-qmd-verify-cli/releases/download/v#{version}/rm-qmd-verify-cli_#{version}_linux_aarch64.tar.gz"
-      sha256 "1ac719b9ba49ad0fce7367ce0618c410007e8b92f5b00cd45eac3b118280bb69"
+      sha256 "62140add4c181adc0170126ef3a23155095385826a0f0578e237425e4e078ed2"
+    end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/qmdverify"]
     end
   end
 
