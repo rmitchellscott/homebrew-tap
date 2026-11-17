@@ -5,23 +5,23 @@
 class Wxcraft < Formula
   desc "METAR and TAF retrieval and decoding"
   homepage "https://github.com/rmitchellscott/WxCraft"
-  version "0.0.5"
-  license "MIT"
+  version "0.0.6"
+  license "GPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.5/wxcraft_Darwin_x86_64.tar.gz"
-      sha256 "01b1728f9b0aba31a6fc297f3fe842aafd6f4969762bbab5035e7159d191a69d"
+      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.6/wxcraft_Darwin_x86_64.tar.gz"
+      sha256 "2966196bbe25fb81c39bd8fa99086d54004bd0e47f042e9dcdff92a162f830f9"
 
-      def install
+      define_method(:install) do
         bin.install "wxcraft"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.5/wxcraft_Darwin_arm64.tar.gz"
-      sha256 "7dd085b9c84c4e7607597f7c45b4c5fa0fa99718179647ae1ba0a1ca41247a0a"
+      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.6/wxcraft_Darwin_arm64.tar.gz"
+      sha256 "f4038f63d20c904ef0de7c47bd43e913fd709f5082cf5e388df1fdb0c1350d81"
 
-      def install
+      define_method(:install) do
         bin.install "wxcraft"
       end
     end
@@ -29,16 +29,16 @@ class Wxcraft < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.5/wxcraft_Linux_x86_64.tar.gz"
-      sha256 "dc620ca35dc9470a36326ef0d87dcfc9c3ed4acf9d548ccf1233c73965167ada"
-      def install
+      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.6/wxcraft_Linux_x86_64.tar.gz"
+      sha256 "4fd8c75aca90a095e96225a452921d40b4b2f0a7a775986d58a1d0d0007f47f4"
+      define_method(:install) do
         bin.install "wxcraft"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.5/wxcraft_Linux_arm64.tar.gz"
-      sha256 "16e8878d0286ddb2fdcdd58995c8924c5798ee3153c9c9ddd3a0fc85ad2a36eb"
-      def install
+      url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.6/wxcraft_Linux_arm64.tar.gz"
+      sha256 "d19d0f4379f9a8e09a4af236a09e6c4e4ef2627c65cee36859da4d88afbd2cee"
+      define_method(:install) do
         bin.install "wxcraft"
       end
     end
