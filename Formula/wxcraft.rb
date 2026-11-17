@@ -11,7 +11,7 @@ class Wxcraft < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.6/wxcraft_Darwin_x86_64.tar.gz"
-      sha256 "2966196bbe25fb81c39bd8fa99086d54004bd0e47f042e9dcdff92a162f830f9"
+      sha256 "f1aa08121190f91dd04cb17881404f6fce4afb806931e8f58623c050ef0d6ab2"
 
       define_method(:install) do
         bin.install "wxcraft"
@@ -19,7 +19,7 @@ class Wxcraft < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.6/wxcraft_Darwin_arm64.tar.gz"
-      sha256 "f4038f63d20c904ef0de7c47bd43e913fd709f5082cf5e388df1fdb0c1350d81"
+      sha256 "2c853e3ca9d1659f7259756c38af22b22ef00a6762aa855af96c3ba1da1c55cc"
 
       define_method(:install) do
         bin.install "wxcraft"
@@ -30,14 +30,14 @@ class Wxcraft < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.6/wxcraft_Linux_x86_64.tar.gz"
-      sha256 "4fd8c75aca90a095e96225a452921d40b4b2f0a7a775986d58a1d0d0007f47f4"
+      sha256 "1b5da309266d2a0050171a021b936621d4ed2244a795770c0fef2770528ed184"
       define_method(:install) do
         bin.install "wxcraft"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/rmitchellscott/WxCraft/releases/download/v0.0.6/wxcraft_Linux_arm64.tar.gz"
-      sha256 "d19d0f4379f9a8e09a4af236a09e6c4e4ef2627c65cee36859da4d88afbd2cee"
+      sha256 "22112ad24c8eb3d0733b268ffba02c2a7d3c58e29a19ea11adeec2ce4eeda647"
       define_method(:install) do
         bin.install "wxcraft"
       end
